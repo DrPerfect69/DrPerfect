@@ -3484,12 +3484,26 @@ body.is-menu-visible #menu .close {
 /* My CSS */
 
 .visible {
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 2s linear;
+	visibility: visible;
+	opacity: 1;
+	transition: opacity 2s linear;
 }
+
 .hidden {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s 2s, opacity 2s linear;
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s 2s, opacity 2s linear;
 }
+
+.buy_button {
+	background: linear-gradient( hsl(277, 100%, 50%), hsl(291, 100%, 50%)); 
+	transition: all .2s ease-out;
+	font-size: 20px;
+}
+
+.buy_button:hover,
+.buy_button:focus {
+	transform: translateY(-1px);
+	box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+} 
+	
