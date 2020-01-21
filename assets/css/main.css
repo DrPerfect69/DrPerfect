@@ -3496,7 +3496,7 @@ body.is-menu-visible #menu .close {
 }
 
 .buy_button {
-	background: linear-gradient( hsl(277, 100%, 50%), hsl(291, 100%, 50%)); 
+	background: linear-gradient( hsl(291, 5%, 49%), hsl(282, 100%, 50%)); 
 	transition: all .2s ease-out;
 	font-size: 20px;
 }
