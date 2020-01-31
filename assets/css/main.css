@@ -3507,4 +3507,31 @@ body.is-menu-visible #menu .close {
 	box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
 	opacity: 0.6;
 } 
+
+.swal2-popup {
+	padding: 0 !important;
+	border-radius: 0 !important;
+}
+
+.swal2-popup p{
+	margin: 0 !important;
+}
+.swal2-popup a{
+	color: #D700FF !important;
+}
+
+.swal2-content{
+	padding: 0.625em !important;
+	font-size: 1.5em !important;
+    line-height: 1.5em !important;
+}
+
+.swal2-header{
+	overflow: hidden;
+}
+
+.swal2-image {
+	margin: 0 !important;
+	transform: scale(2) !important;
+}
 	

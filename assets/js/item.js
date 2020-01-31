@@ -1,3 +1,7 @@
+const Swal = require('sweetalert2')
+const faker = require('faker');
+const _ = require('lodash');
+
 /* 
  * Get URL Variables
  * url exemple http://www.example.com/index.php?id=1&image=awesome.jpg
@@ -20,9 +24,9 @@ function getQueryVariable(variable) {
  */
 
 function setVideoSrc(ref) {
-    var video_source = document.getElementById("video_source");
+    const video_source = document.getElementById("video_source");
     video_source.src = "videos/video_" + ref + ".mp4";
-    var video = document.getElementById('video');
+    const video = document.getElementById('video');
     video.load();
 }
 
@@ -37,15 +41,48 @@ function setItemCode(ref) {
 /* 
  * Show buy message
  */
-function displayBuyMessage() {
+global.displayBuyMessage = function displayBuyMessage() {
     $('#buy_message').removeClass("hidden").addClass("visible");
 }
 
+/*
+ * Display Sale PopUp
+ */
+function popup() {
+    let random_item = _.sample(itemsData);
+    let random_locale = _.sample(['de', 'en', 'en_AU', 'en_CA', 'fr', 'it']);
+    faker.locale = random_locale;
+    Swal.fire({
+        toast: true,
+        position: 'bottom-start',
+        title: "",
+        html:
+        '<p> <b>'+ faker.name.findName() + '</b> from ' + faker.locales[faker.locale].address.default_country +'</p>'+
+        '<p> purchased <b><a href="item.html?ref=' + random_item.ref + '">' + random_item.ref + '</a></b> ' + _.random(1, 15) + ' hours ago </p>',
+        imageUrl: 'images/' +  random_item.ref+ '.jpg',
+        imageWidth: 100,
+        imageHeight: 100,
+        showConfirmButton: false,
+        timer: 10000,
+        timerProgressBar: true,
+        showClass: {
+            popup: 'animated fadeInLeft faster'
+        },
+        hideClass: {
+            popup: 'animated fadeOutLeft faster'
+        }
+    })
+}
+
 window.onload = function () {
-    var item = itemsData.find(item => item.ref === getQueryVariable("ref"));
+    const item = itemsData.find(item => item.ref === getQueryVariable("ref"));
     setVideoSrc(item.ref);
     setItemCode(item.ref);
     if (item.moissanite == false) {
         $('.display').css('display','none')
     }
+    setTimeout(() => {popup()}, 5000); //5000 ms (5 s)
+    setInterval(() => {
+        popup();
+    }, 60000); //60000 ms (1 min)
 };
