@@ -11,8 +11,9 @@
 		/* Modern Browsers */
 		url('../webfonts/AvenirNextLTPro-Regular.otf') format('opentype'),
 		/* Safari, Android, iOS */
-		url('../webfonts/AvenirNextLTPro-Regular.svg#AvenirNextLTPro-Regular') format('svg')
+		url('../webfonts/AvenirNextLTPro-Regular.svg#AvenirNextLTPro-Regular') format('svg');
 		/* Legacy iOS */
+	font-display: swap;
 }
 
 html,
