@@ -87822,7 +87822,7 @@ exports.generate = function generate() {
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],1051:[function(require,module,exports){
 /*!
-* sweetalert2 v9.7.1
+* sweetalert2 v9.7.2
 * Released under the MIT License.
 */
 (function (global, factory) {
@@ -90849,7 +90849,7 @@ Object.keys(instanceMethods).forEach(function (key) {
   };
 });
 SweetAlert.DismissReason = DismissReason;
-SweetAlert.version = '9.7.1';
+SweetAlert.version = '9.7.2';
 
 var Swal = SweetAlert;
 Swal["default"] = Swal;

@@ -6,6 +6,6 @@
   "dependencies": {
     "faker": "^4.1.0",
     "lodash": "^4.17.15",
-    "sweetalert2": "^9.7.1"
+    "sweetalert2": "^9.7.2"
   }
 }

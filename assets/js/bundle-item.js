@@ -24,7 +24,6 @@ function getQueryVariable(variable) {
 /* 
  * Set video name
  */
-
 function setVideoSrc(ref) {
     const video_source = document.getElementById("video_source");
     video_source.src = "videos/video_" + ref + ".mp4";
@@ -35,9 +34,15 @@ function setVideoSrc(ref) {
 /* 
  * Set item code
  */
-
 function setItemCode(ref) {
     document.getElementById('item_code').textContent = ref;
+}
+
+/* 
+ * Set video poster attribute
+ */
+function setVideoPoster(ref) {
+    document.getElementById('video').setAttribute('poster','images/'+ref+'.jpg');
 }
 
 /* 
@@ -80,6 +85,7 @@ window.onload = function () {
     const item = itemsData.find(item => item.ref === getQueryVariable("ref"));
     setVideoSrc(item.ref);
     setItemCode(item.ref);
+    setVideoPoster(item.ref);
     if (item.moissanite == false) {
         $('.display').css('display','none')
     }
@@ -87860,7 +87866,7 @@ exports.generate = function generate() {
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],1051:[function(require,module,exports){
 /*!
-* sweetalert2 v9.7.1
+* sweetalert2 v9.7.2
 * Released under the MIT License.
 */
 (function (global, factory) {
@@ -90887,7 +90893,7 @@ Object.keys(instanceMethods).forEach(function (key) {
   };
 });
 SweetAlert.DismissReason = DismissReason;
-SweetAlert.version = '9.7.1';
+SweetAlert.version = '9.7.2';
 
 var Swal = SweetAlert;
 Swal["default"] = Swal;
